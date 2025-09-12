@@ -1,91 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MD Obaidullah | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    header h1 { margin: 10px 0; font-size: 2.5rem; }
+    header p { font-size: 1.2rem; min-height: 25px; }
+    nav {
+      background: #111827;
+      padding: 12px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #60a5fa; }
+    section {
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: auto;
+      animation: fadeIn 1s ease-in;
+    }
+    h2 {
+      color: #1e3a8a;
+      margin-bottom: 20px;
+    }
+    .project {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .project:hover { transform: scale(1.02); }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1e3a8a;
+      color: white;
+      margin-top: 40px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover { background: #1e40af; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
-
-  <!-- Navbar -->
-  <header class="bg-white shadow-md fixed w-full z-10">
-    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
-      <h1 class="text-2xl font-bold">MyPortfolio</h1>
-      <ul class="flex gap-6">
-        <li><a href="#home" class="hover:text-blue-500">Home</a></li>
-        <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
-        <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
-      </ul>
-    </nav>
+<body>
+  <header>
+    <!-- Add your profile picture in the same folder as index.html -->
+    <img src="https://avatars.githubusercontent.com/u/177635980?v=4" alt="Profile Picture">
+    <h1>MD Obaidullah</h1>
+    <p id="typing"></p>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-500 to-purple-600 text-white">
-    <h2 class="text-5xl font-bold">Hi, I'm Obaidullah 👋</h2>
-    <p class="mt-4 text-lg max-w-xl">A passionate web developer building clean and responsive websites with modern technologies.</p>
-    <a href="#projects" class="mt-6 px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow hover:bg-gray-200">View My Work</a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a B.Tech CSE student (2022–2026) at Dr. C.V. Raman University.  
+      Passionate about building full-stack web applications using Java, Spring Boot, React.js, and MySQL.  
+      Currently exploring software development and contributing projects on GitHub.
+    </p>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="py-16 container mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-12">Projects</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- Project Card -->
-      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
-        <img src="https://via.placeholder.com/400x250" alt="Project" class="w-full">
-        <div class="p-4">
-          <h3 class="text-xl font-semibold">Project One</h3>
-          <p class="text-gray-600">Short description about the project.</p>
-        </div>
-      </div>
-      <!-- Repeat for placeholders -->
-      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
-        <img src="https://via.placeholder.com/400x250" alt="Project" class="w-full">
-        <div class="p-4">
-          <h3 class="text-xl font-semibold">Project Two</h3>
-          <p class="text-gray-600">Short description about the project.</p>
-        </div>
-      </div>
-      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
-        <img src="https://via.placeholder.com/400x250" alt="Project" class="w-full">
-        <div class="p-4">
-          <h3 class="text-xl font-semibold">Project Three</h3>
-          <p class="text-gray-600">Short description about the project.</p>
-        </div>
-      </div>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Retail Billing Software</h3>
+      <p>A full-featured Java-based billing software with Razorpay integration, inventory tracking, and reports.</p>
+      <a href="https://github.com/obaidu11" target="_blank">🔗 View on GitHub</a>
+    </div>
+    <div class="project">
+      <h3>HR Management App</h3>
+      <p>Employee management system with CRUD features, role-based access, and performance tracking.</p>
+      <a href="https://github.com/obaidu11" target="_blank">🔗 View on GitHub</a>
     </div>
   </section>
 
-  <!-- Contact Form -->
-  <section id="contact" class="py-16 bg-gray-200">
-    <div class="container mx-auto px-6 md:w-1/2">
-      <h2 class="text-4xl font-bold text-center mb-8">Contact Me</h2>
-      <form id="contactForm" class="bg-white shadow-md rounded-2xl p-8">
-        <div class="mb-4">
-          <label class="block text-gray-700">Name</label>
-          <input type="text" id="name" class="w-full p-3 border rounded-lg" placeholder="Your Name">
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700">Email</label>
-          <input type="email" id="email" class="w-full p-3 border rounded-lg" placeholder="Your Email">
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700">Message</label>
-          <textarea id="message" rows="4" class="w-full p-3 border rounded-lg" placeholder="Your Message"></textarea>
-        </div>
-        <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700">Send</button>
-      </form>
-      <p id="formMsg" class="mt-4 text-center"></p>
-    </div>
+  <section id="skills">
+    <h2>Skills</h2>
+    <p><b>Languages:</b> Java, JavaScript, HTML, CSS</p>
+    <p><b>Frameworks:</b> Spring Boot, React.js</p>
+    <p><b>Database:</b> MySQL</p>
+    <p><b>Tools:</b> Git, GitHub, VS Code, IntelliJ</p>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-white shadow-md py-6 text-center">
-    <p>© 2025 My Portfolio. All rights reserved.</p>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📧 Email: <a href="mailto:obaidullahmd23@gmail.com">obaidullahmd23@gmail.com</a></p>
+    <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/md" target="_blank">linkedin.com/in/md</a></p>
+    <p>💻 GitHub: <a href="https://github.com/obaidu11" target="_blank">github.com/obaidu11</a></p>
+    <br>
+    <button onclick="window.open('resume.pdf')">Download Resume</button>
+  </section>
+
+  <footer>
+    <p>© 2025 MD Obaidullah | Portfolio</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Typing Effect
+    const textArray = ["Full Stack Developer", "Java | Spring Boot | React.js", "Problem Solver"];
+    let index = 0, charIndex = 0;
+    const typingElement = document.getElementById("typing");
+
+    function type() {
+      if (charIndex < textArray[index].length) {
+        typingElement.textContent += textArray[index].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 100);
+      } else {
+        setTimeout(erase, 2000);
+      }
+    }
+
+    function erase() {
+      if (charIndex > 0) {
+        typingElement.textContent = textArray[index].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, 50);
+      } else {
+        index = (index + 1) % textArray.length;
+        setTimeout(type, 500);
+      }
+    }
+
+    type();
+  </script>
 </body>
 </html>
+
