@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MD Obaidullah | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    header h1 { margin: 10px 0; font-size: 2.5rem; }
+    header p { font-size: 1.2rem; min-height: 25px; }
+    nav {
+      background: #111827;
+      padding: 12px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #60a5fa; }
+    section {
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: auto;
+      animation: fadeIn 1s ease-in;
+    }
+    h2 {
+      color: #1e3a8a;
+      margin-bottom: 20px;
+    }
+    .project {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .project:hover { transform: scale(1.02); }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1e3a8a;
+      color: white;
+      margin-top: 40px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover { background: #1e40af; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Add your profile picture in the same folder as index.html -->
+    <img src="https://avatars.githubusercontent.com/u/177635980?v=4" alt="Profile Picture">
+    <h1>MD Obaidullah</h1>
+    <p id="typing"></p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a B.Tech CSE student (2022–2026) at Dr. C.V. Raman University.  
+      Passionate about building full-stack web applications using Java, Spring Boot, React.js, and MySQL.  
+      Currently exploring software development and contributing projects on GitHub.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Retail Billing Software</h3>
+      <p>A full-featured Java-based billing software with Razorpay integration, inventory tracking, and reports.</p>
+      <a href="https://github.com/obaidu11" target="_blank">🔗 View on GitHub</a>
+    </div>
+    <div class="project">
+      <h3>HR Management App</h3>
+      <p>Employee management system with CRUD features, role-based access, and performance tracking.</p>
+      <a href="https://github.com/obaidu11" target="_blank">🔗 View on GitHub</a>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <p><b>Languages:</b> Java, JavaScript, HTML, CSS</p>
+    <p><b>Frameworks:</b> Spring Boot, React.js</p>
+    <p><b>Database:</b> MySQL</p>
+    <p><b>Tools:</b> Git, GitHub, VS Code, IntelliJ</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📧 Email: <a href="mailto:obaidullahmd23@gmail.com">obaidullahmd23@gmail.com</a></p>
+    <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/md" target="_blank">linkedin.com/in/md</a></p>
+    <p>💻 GitHub: <a href="https://github.com/obaidu11" target="_blank">github.com/obaidu11</a></p>
+    <br>
+    <button onclick="window.open('resume.pdf')">Download Resume</button>
+  </section>
+
+  <footer>
+    <p>© 2025 MD Obaidullah | Portfolio</p>
+  </footer>
+
+  <script>
+    // Typing Effect
+    const textArray = ["Full Stack Developer", "Java | Spring Boot | React.js", "Problem Solver"];
+    let index = 0, charIndex = 0;
+    const typingElement = document.getElementById("typing");
+
+    function type() {
+      if (charIndex < textArray[index].length) {
+        typingElement.textContent += textArray[index].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 100);
+      } else {
+        setTimeout(erase, 2000);
+      }
+    }
+
+    function erase() {
+      if (charIndex > 0) {
+        typingElement.textContent = textArray[index].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, 50);
+      } else {
+        index = (index + 1) % textArray.length;
+        setTimeout(type, 500);
+      }
+    }
+
+    type();
+  </script>
+</body>
+</html>
